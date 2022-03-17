@@ -3,11 +3,11 @@ import { CommonModule } from "@angular/common";
 import { CartService } from 'src/app/service/cart.service';
 
 
-@NgModule({
-  imports: [CommonModule]
+// @NgModule({
+//   imports: [CommonModule]
 
-})
-export class ProductsModule { }
+// })
+// export class ProductsModule { }
 
 @Component({
   selector: 'app-header',
@@ -25,10 +25,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.getProducts()
-    // .subscribe((res: string | any[])=>{
-    //   this.totalItem = res.length;
-    // })
-    
+    .subscribe((res: string | any[])=>{
+      this.totalItem = res.length;
+    })
   }
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
