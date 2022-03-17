@@ -8,15 +8,19 @@ import { UserService } from '../_service/user.service';
 })
 export class UserComponent implements OnInit {
 
+  message: any;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
+    this.forUser();
   }
 
   forUser(){
     this.userService.forUser().subscribe(
       (response: any) =>{
         console.log(response);
+        this.message=response;
       },
       (error: any)=>{
         console.log(error);

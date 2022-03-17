@@ -26,25 +26,25 @@ export class UserService {
   public forAdmin(){
     return this.HttpClient.get(this.PATH_OF_API +'/forAdmin', {responseType: "text"});
   }
-  public roleMatch(allowedRoles: string | any[]): boolean{
 
-    let isMatch=false;
+  public roleMatch(allowedRoles: string | any[]): boolean {
+    let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
 
-    if(userRoles !=null && userRoles){
-      for(let i=0; i<userRoles.length;i++){
-        for(let j=0;j<allowedRoles.length; j++){
-
-          if(userRoles[i].roleName === allowedRoles[j]){
-            isMatch =true;
+    if (userRoles != null && userRoles) {
+      for (let i = 0; i < userRoles.length; i++) {
+        for (let j = 0; j < allowedRoles.length; j++) {
+          if (userRoles[i].roleName === allowedRoles[j]) {
+            isMatch = true;
             return isMatch;
-          }
-          else{
+            
+          } else {
             return isMatch;
           }
         }
       }
     }
+
 
   }
 }

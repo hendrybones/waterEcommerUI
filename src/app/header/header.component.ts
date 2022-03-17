@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../_service/user-auth.service';
 import { UserService } from '../_service/user.service';
 import { Router } from '@angular/router';
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-header',
